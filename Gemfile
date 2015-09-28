@@ -1,6 +1,17 @@
 source 'https://rubygems.org'
 
 
+
+gem 'factory_girl_rails'
+gem 'simplecov'
+gem 'better_errors'
+gem 'shoulda-matchers'
+gem 'binding_of_caller'
+gem 'materialize-sass'
+gem 'devise'
+gem 'paperclip'
+gem 'rspec-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
