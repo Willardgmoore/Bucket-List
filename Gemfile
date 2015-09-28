@@ -2,13 +2,12 @@ source 'https://rubygems.org'
 
 
 
-gem 'factory_girl_rails'
-gem 'simplecov'
-gem 'better_errors'
-gem 'shoulda-matchers'
+gem 'devise', '~> 3.4.0'
 gem 'binding_of_caller'
+gem 'factory_girl_rails'
 gem 'materialize-sass'
-gem 'devise'
+gem 'simplecov'
+gem 'shoulda-matchers'
 gem 'paperclip'
 gem 'rspec-rails'
 
@@ -45,6 +44,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'better_errors'
   gem 'byebug'
 end
 
