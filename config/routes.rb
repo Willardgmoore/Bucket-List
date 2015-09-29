@@ -1,25 +1,13 @@
 Rails.application.routes.draw do
-  get 'comments/index'
+  root to: 'static_pages#home'
 
-  get 'comments/show'
+  devise_for :users
 
-  get 'comments/edit'
+  resources :activities
+  resources :comments
+  resources :users
 
-  get 'comments/new'
 
-  get 'activities/index'
-
-  get 'activities/show'
-
-  get 'activities/edit'
-
-  get 'activities/new'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
