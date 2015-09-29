@@ -13,7 +13,16 @@
           %li
             = link_to 'Activities',activities_path  
           %li
-            = link_to 'Your Profile', profile_path 
+            %a.dropdown-button.btn{"data-activates" => "dropdown1", :href => "#"}Your Profile
+            %ul#dropdown1.dropdown-content
+              %li
+                = link_to 'one', profile_path
+              %li.divide
+              %li
+                = link_to 'one', profile_path
+              %li.divide
+              %li
+                = link_to 'one', profile_path
           %li
             = link_to('Sign Out', destroy_user_session_path, :method => :delete)
         - else
@@ -27,7 +36,7 @@
           %li
             = link_to 'Users', users_path 
           %li
-            = link_to 'Bucket List', activities_path  
+            = link_to 'Activities', activities_path  
           %li
             = link_to('Sign Out', destroy_user_session_path, :method => :delete)
         - else
