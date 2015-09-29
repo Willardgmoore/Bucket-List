@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-  	@user = activities.all
+  	@activity = activities.all
   end
 
   def show
@@ -40,9 +40,6 @@ class ActivitiesController < ApplicationController
 		@activity.destroy method: :delete
 
 		redirect_to users_path
-	end
-
-	def profile
 	end
 
   private
