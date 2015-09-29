@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-  	@user = User.new(user_params)
+  	@user = User.all
   end
 
   def show
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 	end
 
 	def new
+		@user = User.new
 	end
 
 	def update
@@ -35,6 +36,10 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
+		@user = User.find(params[:id])
+		@user.destroy method: :delete
+
+		redirect_to users_path
 	end
 
 	def profile
