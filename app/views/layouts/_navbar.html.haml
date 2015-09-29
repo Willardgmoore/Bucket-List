@@ -1,0 +1,33 @@
+%nav
+  .nav-wrapper
+    %a.brand-logo{:href => "#!"} Bucket List
+    %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+      %i.material-icons menu
+    %ul.right.hide-on-med-and-down
+      %li
+        = link_to 'Home', root_path 
+      %li
+        = link_to 'Users', users_path 
+      %li
+        = link_to 'Bucket List', activities_path  
+        - if user_signed_in?  
+          %li
+            = link_to('Sign Out', destroy_user_session_path, :method => :delete)
+        - else
+          %li
+            = link_to('Login', new_user_session_path)
+
+    %ul#mobile-demo.side-nav  
+      %li
+        = link_to 'Home', root_path 
+      %li
+        = link_to 'Users', users_path 
+      %li
+        = link_to 'Bucket List', activities_path  
+        - if user_signed_in?  
+          %li
+            = link_to('Sign Out', destroy_user_session_path, :method => :delete)
+        - else
+          %li
+            = link_to('Login', new_user_session_path)
+
