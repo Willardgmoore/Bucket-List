@@ -1,33 +1,40 @@
-%nav
-  .nav-wrapper
-    %a.brand-logo{:href => "#!"} Bucket List
-    %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
-      %i.material-icons menu
-    %ul.right.hide-on-med-and-down
-      - if user_signed_in?  
-        %li
-          = link_to 'Home', root_path 
-        %li
-          = link_to 'Users', users_path 
-        %li
-          = link_to 'Bucket List', activities_path  
-        %li
-          = link_to('Sign Out', destroy_user_session_path, :method => :delete)
-      - else
-        %li
-          = link_to('Login', new_user_session_path)
+.navbar-fixed
+  %nav.brown.darken-2.z-depth-2
+    .nav-wrapper
+      %a.brand-logo{:href => root_path} Bucket List
+      %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+        %i.material-icons menu
+      %ul.right.hide-on-med-and-down
+        - if user_signed_in?  
+          %li
+            = link_to 'Home', root_path 
+          %li
+            = link_to 'Users', users_path        
+          %li
+          -# TODO make icon a link
+            -# .link-container
+            %i.left-align.tiny.material-icons view_list
+          %li
+            = link_to 'Bucket List',activities_path  
+          %li
+            = link_to 'Your Profile', profile_path 
+          %li
+            = link_to('Sign Out', destroy_user_session_path, :method => :delete)
+        - else
+          %li
+            = link_to('Login', new_user_session_path)
 
-    %ul#mobile-demo.side-nav  
-      - if user_signed_in?  
-        %li
-          = link_to 'Home', root_path 
-        %li
-          = link_to 'Users', users_path 
-        %li
-          = link_to 'Bucket List', activities_path  
-        %li
-          = link_to('Sign Out', destroy_user_session_path, :method => :delete)
-      - else
-        %li
-          = link_to('Login', new_user_session_path)
+      %ul#mobile-demo.side-nav  
+        - if user_signed_in?  
+          %li
+            = link_to 'Home', root_path 
+          %li
+            = link_to 'Users', users_path 
+          %li
+            = link_to 'Bucket List', activities_path  
+          %li
+            = link_to('Sign Out', destroy_user_session_path, :method => :delete)
+        - else
+          %li
+            = link_to('Login', new_user_session_path)
 
