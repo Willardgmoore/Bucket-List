@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
 
-  devise_for :users
+  devise_for :users, :controllers => {registrations: "registrations"} # Makes the 1st time redirect magic work
 
   resources :activities
   resources :comments

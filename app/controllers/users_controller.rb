@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
   	@user = User.all
   end
@@ -13,9 +14,11 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
+  	@user.save
 
 	  if @user.save
-	    redirect_to @user
+	  	byebug
+	    redirect_to profile_path
 	  else
 	    render 'new'
 	  end
@@ -43,6 +46,7 @@ class UsersController < ApplicationController
 	end
 
 	def profile
+		@user = current_user
 	end
 
   private
