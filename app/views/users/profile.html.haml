@@ -2,12 +2,13 @@
 %br 
 %br
 %form
-  .form-group
-    %label{:for => "exampleInputName1"} Name
-    %input#exampleInputName1.formcontrol{:placeholder => "Name", :type => "text"}
-  .form-group
-    %label{:for => "exampleInputUsername1"} Username
-    %input#exampleInputUsername1.formcontrol{:placeholder => "Username", :type => "text"}  
+  .row
+    .form-group.col.s6
+      %label{:for => "exampleInputName1"} First Name
+      %input#exampleInputName1.formcontrol{:placeholder => "First Name", :type => "text"}
+    .form-group.col.s6
+      %label{:for => "exampleInputUsername1"} Last Name
+      %input#exampleInputUsername1.formcontrol{:placeholder => "Last Name", :type => "text"}  
     Date of Birth
     %input.datepicker{:type => "date"}
     %br
