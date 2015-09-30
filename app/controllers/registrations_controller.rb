@@ -1,10 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
-	protected
+
+  protected
   
   def after_sign_up_path_for(resource)
-    :profile
+    :edit_user_registration
   end
 
- 
+  private
 
 end

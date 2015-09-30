@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-  	@user = User.all
+  	@users = User.all
   end
 
   def show
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	@user = current_user
+  	@user = User.find(params[:id])
   end
 
   def create
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   	@user.save
 
 	  if @user.save
-	  	byebug
 	    redirect_to profile_path
 	  else
 	    render 'new'

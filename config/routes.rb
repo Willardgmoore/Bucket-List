@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :activities
   resources :comments
-  resources :users
+  resources :users, only: [:index, :show, :edit]
+
+  # get '/users', to: 'registrations#show', as: :user_registration_show
 
   get '/profile', to: 'users#profile', as: :profile
   get '/edit_profile', to: 'users#edit#profile', as: :edit_profile
