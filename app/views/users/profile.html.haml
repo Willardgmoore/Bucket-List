@@ -1,36 +1,13 @@
-%br
-%br 
-%br
-%form
-  .row
-    .form-group.col.s6
-      %label{:for => "first_name"} First Name
-      %input#exampleInputName1.formcontrol{:placeholder => "First Name", :type => "text"}
-    .form-group.col.s6
-      %label{:for => "last_name"} Last Name
-      %input#exampleInputUsername1.formcontrol{:placeholder => "Last Name", :type => "text"}  
-    Date of Birth
-    %input.datepicker{:type => "date"}
-    %br
-    %br
-    %i.material-icons.prefix mode_edit
-    About You
-    %textarea#icon_prefix2.materialize-textarea
-    %label{:for => "icon_prefix2"}  
-  .form-group
-    %label{:for => "profile_picture"} Import a Profile Picture
-    %input#exampleInputFile{:type => "file"} 
-    %label
-    %br
-    %br
-  %button.btn.btn-default{:type => "submit"} Update
-  %br
-  %br
-  %br
-  %br
+.center
+  %ul
+    %li
+      %h2
+        = current_user.first_name.capitalize
+        = current_user.last_name.capitalize
+    %li
+      = current_user.description.capitalize
 
-
-
-
-
+  %h2 Your Bucket List
+  %ul
+    / - for 
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   get '/profile', to: 'users#profile', as: :profile
+  get '/edit_profile', to: 'users#edit#profile', as: :edit_profile
 
 
   # The priority is based upon order of creation: first created -> highest priority.
