@@ -1,1 +1,13 @@
-index.html.haml
+.center
+  %ul
+    %li
+      %h2
+        = current_user.first_name.capitalize
+        = current_user.last_name.capitalize
+    %li
+      = current_user.description.capitalize
+
+  %h2 Your Bucket List
+  %ul
+    / - for 
+
