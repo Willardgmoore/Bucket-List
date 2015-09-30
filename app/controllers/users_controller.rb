@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
 	def profile
 		@user = current_user
+    @activity = Activity.find_by(params[current_user])
 	end
 
   private
