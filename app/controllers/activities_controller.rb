@@ -5,11 +5,9 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
-
   end
 
   def create
@@ -27,9 +25,7 @@ class ActivitiesController < ApplicationController
 	end
 
 	def update
-
- 
-	  if @activity.update(article_params)
+    if @activity.update(article_params)
 	    redirect_to @activity
 	  else
 	    render 'edit'

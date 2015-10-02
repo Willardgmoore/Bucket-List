@@ -13,16 +13,13 @@
           %li
             = link_to 'Activities',activities_path  
           %li
-            %a.dropdown-button.btn.brown.darken-2.z-depth-2{"data-activates" => "dropdown1", :href => "#"}Your Profile
+            %a.dropdown-button{"data-activates" => "dropdown1", :href => "#"}Your Profile
             %ul#dropdown1.dropdown-content
               %li
                 = link_to 'Show Profile', profile_path #TODO fix path
               %li.divide
               %li
                 =link_to 'Update Profile', edit_user_registration_path
-              %li.divide
-              %li
-                =link_to 'Update Email/Password', edit_user_registration_path
           %li
             = link_to('Sign Out', destroy_user_session_path, :method => :delete)
         - else
@@ -36,7 +33,11 @@
           %li
             = link_to 'Users', users_path 
           %li
-            = link_to 'Activities', activities_path  
+            = link_to 'Activities', activities_path
+          %li
+            = link_to 'Show Profile', profile_path
+          %li
+            =link_to 'Update Profile', edit_user_registration_path     
           %li
             = link_to('Sign Out', destroy_user_session_path, :method => :delete)
         - else

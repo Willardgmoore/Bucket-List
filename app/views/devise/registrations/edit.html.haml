@@ -1,16 +1,46 @@
 %br
 %br 
 %br
-%form
+%form     
+%h2.center-align Update 
+= resource_name.to_s.humanize 
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = devise_error_messages! 
+
+  .input-field
+    = f.label :email 
+    %br
+    = f.email_field :email, autofocus: true 
+
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    Currently waiting confirmation for: 
+    = resource.unconfirmed_email 
+
+  .input-field
+    = f.label :current_password 
+    %br
+    = f.password_field :current_password, placeholder: "(we need your current password to confirm your changes)", autocomplete: "off" 
+
+  .input-field
+    = f.label :password 
+    %br
+    = f.password_field :password, placeholder: "(leave blank if you don't want to change it)", autocomplete: "off" 
+
+  .input-field
+    = f.label :password_confirmation 
+    %br
+    = f.password_field :password_confirmation, autocomplete: "off" 
+  %br
+  %br 
+  %br
   .row
-    .form-group.col.s6
+    .col.s6
       %label{:for => "exampleInputName1"} First Name
-      %input#exampleInputName1.formcontrol{:placeholder => "First Name", :type => "text"}
-    .form-group.col.s6
+      = f.text_field :first_name, placeholder: 'First Name', class: 'formcontrol'
+    .col.s6
       %label{:for => "exampleInputUsername1"} Last Name
-      %input#exampleInputUsername1.formcontrol{:placeholder => "Last Name", :type => "text"}  
-    Date of Birth
-    %input.datepicker{:type => "date"}
+      = f.text_field :last_name, placeholder: 'Last Name', class: 'formcontrol'
     %br
     %br
     %i.material-icons.prefix mode_edit
@@ -28,3 +58,27 @@
   %br
   %br
   %br
+    = f.text_field :description, placeholder: 'Description', class: 'materialize-textarea'
+    %label{:for => "icon_prefix2"}  
+  .form-group
+    %label{:for => "exampleInputFile"} Import a Profile Picture
+    %input{:type => "file", :accept => 'image/*'} 
+    %label
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br
+  .center-align
+    = f.submit "Update", class: 'btn'
+    = link_to "Back", :back, class: 'btn'
+
+.center-align
+%h3 Cancel my account
+%p Unhappy? 
+= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete 
+%br
+%br
+%br
+%br
