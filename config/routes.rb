@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
 
-  devise_for :users, :controllers => {registrations: "registrations"} # Makes the 1st time redirect magic work
+  devise_for :users
 
   resources :activities
   resources :comments
-  resources :users
+  resources :users, only: [:index, :show]
 
   get '/profile', to: 'users#profile', as: :profile
 

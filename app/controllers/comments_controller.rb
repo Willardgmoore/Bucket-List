@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
   def index
-  	@comment = comment.all
+  	@comments = Comment.all
   end
 
   def show
-  	@comment = comment.find(params[:id])
+  	@comment = Comment.find(params[:id])
   end
 
   def edit
-  	@comment = comment.find(params[:id])
+  	@comment = Comment.find(params[:id])
   end
 
   def create
-  	@comment = comment.new(user_params)
+  	@comment = Comment.new(user_params)
 
 	  if @comment.save
 	    redirect_to @comment
@@ -22,11 +22,11 @@ class CommentsController < ApplicationController
 	end
 
 	def new
-		@comment = comment.new
+		@comment = Comment.new
 	end
 
 	def update
-	  @comment = comment.find(params[:id])
+	  @comment = Comment.find(params[:id])
  
 	  if @comment.update(article_params)
 	    redirect_to @comment
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@comment = comment.find(params[:id])
+		@comment = Comment.find(params[:id])
 		@comment.destroy method: :delete
 
 		redirect_to users_path

@@ -1,36 +1,35 @@
 %br
-%br 
 %br
-%form
-  .row
-    .form-group.col.s6
-      %label{:for => "exampleInputName1"} First Name
-      %input#exampleInputName1.formcontrol{:placeholder => "First Name", :type => "text"}
-    .form-group.col.s6
-      %label{:for => "exampleInputUsername1"} Last Name
-      %input#exampleInputUsername1.formcontrol{:placeholder => "Last Name", :type => "text"}  
-    Date of Birth
-    %input.datepicker{:type => "date"}
-    %br
-    %br
-    %i.material-icons.prefix mode_edit
-    About You
-    %textarea#icon_prefix2.materialize-textarea
-    %label{:for => "icon_prefix2"}  
-  .form-group
-    %label{:for => "exampleInputFile"} Import a Profile Picture
-    %input#exampleInputFile{:type => "file"} 
-    %label
-    %br
-    %br
-  %button.btn.btn-default{:type => "submit"} Update
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%br
+%h4.center-align  
+  = current_user.first_name  
+  = current_user.last_name 
+%br
+%h5.center-align  
+  = current_user.description 
+%br
+%h4.center-align
+  Bucketlist Items :
   %br
   %br
   %br
-  %br
-
-
-
-
-
-
+%h4  
+.center-align
+  %h5{:href => "#"} 
+  = link_to 'Add Activity', new_activity_path
+  %h5{:href => "#"} 
+  = link_to 'Remove an Activity', new_activity_path
+%br
+%br
+%br
+%br
+    

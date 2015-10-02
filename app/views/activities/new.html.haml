@@ -1,0 +1,25 @@
+/ = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+/   = devise_error_messages! 
+/ .col.s6
+/   %label{:for => "exampleInputName1"} First Name
+/   = f.text_field :first_name, placeholder: 'First Name', class: 'formcontrol'
+/ .col.s6
+/   %label{:for => "exampleInputUsername1"} Last Name
+/   = f.text_field :last_name, placeholder: 'Last Name', class: 'formcontrol'
+/ Date of Birth
+/ %input.datepicker{:type => "date"}
+/ %br
+/ %br
+/ %i.material-icons.prefix mode_edit
+/ About You
+/ = f.text_field :description, placeholder: 'Description', class: 'materialize-textarea'
+/ %label{:for => "icon_prefix2"}  
+/ .form-group
+/ %label{:for => "exampleInputFile"} Import a Profile Picture
+/ %input#exampleInputFile{:type => "file"} 
+/ %label
+/ %br
+/ %br
+
+
+

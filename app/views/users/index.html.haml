@@ -1,1 +1,11 @@
-index.html.haml
+.center
+  %h2 Users
+  %hr
+  %ul
+    %li
+      %h4
+        - @user.each do |f|
+          %li
+            = f.first_name.capitalize
+            = f.last_name.capitalize
+            %hr  

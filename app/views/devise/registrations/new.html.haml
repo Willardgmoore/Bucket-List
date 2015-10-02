@@ -1,0 +1,59 @@
+%h2.center-align Sign Up
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :post }) do |f|
+  = devise_error_messages! 
+
+  .input-field
+    = f.label :email 
+    %br
+    = f.email_field :email, autofocus: true 
+
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    Currently waiting confirmation for: 
+    = resource.unconfirmed_email 
+
+  .input-field
+    = f.label :password 
+    %br
+    = f.password_field :password, placeholder: "(Input a password)", autocomplete: "off" 
+
+  .input-field
+    = f.label :password_confirmation 
+    %br
+    = f.password_field :password_confirmation, autocomplete: "off" 
+  %br
+  %br 
+  %br
+  .row
+    .col.s6
+      %label{:for => "exampleInputName1"} First Name
+      = f.text_field :first_name, placeholder: 'First Name', class: 'formcontrol'
+    .col.s6
+      %label{:for => "exampleInputUsername1"} Last Name
+      = f.text_field :last_name, placeholder: 'First Name', class: 'formcontrol'  
+    %br
+    %br
+    %i.material-icons.prefix mode_edit
+    About You
+    = f.text_area :description, class: 'materialize-textarea'
+    %label{:for => "icon_prefix2"}  
+  .form-group
+    %label{:for => "exampleInputFile"} Import a Profile Picture
+    %input{:type => "file", :accept => 'image/*'} 
+    %label
+    %br
+    %br
+  %br
+  %br
+  %br
+  %br
+  .center-align
+    = f.submit "Submit", class: 'btn'
+  %br
+  %br
+  %br
+  %br  
+
+
+
+
